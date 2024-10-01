@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import SecurityLevel from './components/SecurityLevel';
+import { Grid2 } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid2
+      container
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      sx={{ backgroundColor: "#141313"}}
+      style={{ minHeight: '100vh'}} // Esto asegura que el contenido ocupe toda la altura de la ventana
+    >
+      <SecurityLevel />
+    </Grid2>
   );
 }
+
 
 export default App;
