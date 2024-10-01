@@ -29,7 +29,7 @@ export default function SecurityLevel() {
         if (/\d/.test(password)) level += 15
         if (/[A-Z]/.test(password)) level += 15
         if (/[a-z]/.test(password)) level += 5
-        if (/[`·!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(password)) level += 20
+        if (/[`·!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/.test(password)) level += 20
         if (/[ñÑ]/.test(password)) level += 20
         level = parseInt(level / 20) * 20
         setStrength(level)
@@ -59,6 +59,8 @@ export default function SecurityLevel() {
             case 100:
                 strengthText = "Unbreakable"
                 color = "#2fbaa8"
+                break;
+            default:
                 break;
         }
 
@@ -137,7 +139,7 @@ export default function SecurityLevel() {
                             },
                         }}
                     />
-                    <CustomButton icon={inputType == "password" ? <RemoveRedEye /> : <VisibilityOff />} action={changeInputType} />
+                    <CustomButton icon={inputType === "password" ? <RemoveRedEye /> : <VisibilityOff />} action={changeInputType} />
                     <CustomButton icon={<ContentCopy />} action={copyToClipboard} />
                     <CustomButton icon={<AutoAwesome />} action={generatePassword} />
                 </Grid2>

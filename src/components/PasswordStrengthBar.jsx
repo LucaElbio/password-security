@@ -1,7 +1,7 @@
 import { Box, LinearProgress} from '@mui/material';
 export default function PasswordStrengthBar({ strength, color }) {
     return (
-        <Box sx={{ width: '40%', mt: "20px", mb: "10px", display: strength == -1 ? "none" : "block" }}>
+        <Box sx={{ width: '40%', mt: "20px", mb: "10px", display: strength === -1 ? "none" : "block" }}>
             <LinearProgress
                 variant="determinate"
                 value={strength}
